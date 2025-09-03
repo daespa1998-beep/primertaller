@@ -44,19 +44,22 @@ int mostrarNumero(int vector [N]){
 }
  
 void ordenarAcendente(int arr[N], int n){
-   int i, j, min, temp, paso=1;
-   for(i=0; i<n-1; i++){
-    min = i;
-    for(j=i+1; j<n; j++){
-        min= j;
+    int i, j, min, temp, paso=1;
+    for(i=0; i<n-1; i++){
+        min = i;
+        for(j=i+1; j<n; j++){
+            if (arr[j] < arr[min]){
+                min = j;
+            }    
+        }
+
+        temp = arr[i];
+        arr[i] = arr[min];
+        arr[min] = temp;
+
+        printf("Paso %d: ", paso++);
+        mostrarNumero(arr);
     }
-   }
-   temp = arr[i];
-   arr[i] = arr[min];
-   arr[min] = temp;
-   
-   printf("paso %d:", paso++);
-   mostrarNumero(arr);
 }
 
 void ordenarDesendente(int arr[N], int n) {
