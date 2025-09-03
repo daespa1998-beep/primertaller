@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #primer taller - ordenamientos de algoritmos en C
 
 ete programa maneja dos algoritmos de ordenamiento los cuales son:
