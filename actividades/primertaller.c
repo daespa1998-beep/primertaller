@@ -26,8 +26,8 @@ int main() {
 int ingresarNumero(int vector [N]){
     for ( int i=0; i<N; i++){
         do{
-            printf("dogite un numero positivo, posicion %d:",i+1);
-            scanf("%d",& vector [i]);
+            printf("digite un numero positivo, posicion %d:",i+1);
+            scanf("%d ",& vector [i]);
             if(vector[i] <=0){
                 printf("Error: debe ser un numero positivo");
             }
@@ -37,9 +37,9 @@ int ingresarNumero(int vector [N]){
 
 int mostrarNumero(int vector [N]){
     for(int i=0; i<N; i++ ){
-        printf("%d", vector[i]);
+        printf("%d"" ", vector[i]);
     }
-    printf("\n");
+    printf("\n"" ");
     return 0;
 }
  
@@ -57,7 +57,7 @@ void ordenarAcendente(int arr[N], int n){
         arr[i] = arr[min];
         arr[min] = temp;
 
-        printf("Paso %d: ", paso++);
+        printf("Paso %d :"" ", paso++);
         mostrarNumero(arr);
     }
 }
@@ -74,9 +74,9 @@ void ordenarDesendente(int arr[N], int n) {
         }
         arr[j+1] = key;
 
-        printf("paso %d: ", paso++);
+        printf("paso %d :"" ", paso++);
         mostrarNumero(arr);
     }
 }
 
-//"prueba de guardado ya termidado"//
+//"prueba de guardado ya termidado2"//
