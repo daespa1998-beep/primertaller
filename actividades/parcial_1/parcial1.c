@@ -27,7 +27,35 @@ float sumaNotas(int i){
     return estud[i] .nota + sumaNotas(i + 1);
     // esta funcion calcula la suma de las notas
 }
-
+//select sort por codigo de estudiante
+void selectionSort() {
+    for (int i = 0; i < n - 1; i++) {
+        int minIndex = i;
+        for (int j = i + 1; j < n; j++) {
+            if (estud[j].codigo < estud[minIndex].codigo) {
+                minIndex = j;
+            }
+        }
+        // Intercambia el elemento minimo con el primer elemento
+        Estudiante temp=estud[i];
+        estud[i]=estud[minIndex];
+        estud[minIndex]=temp;
+    }
+}
+void selectionSort() {
+    for (int i = 0; i < n - 1; i++) {
+        int minIndex = i;
+        for (int j = i + 1; j < n; j++) {
+            if (estud[j].codigo < estud[minIndex].codigo) {
+                minIndex = j;
+            }
+        }
+        // Intercambia el elemento minimo con el primer elemento
+        Estudiante temp=estud[i];
+        estud[i]=estud[minIndex];
+        estud[minIndex]=temp;
+    }
+}
 
 // menu de opciones
 int main() {
@@ -36,6 +64,7 @@ int main() {
         printf("\n  Menu  \n");
         printf("1. Nota Maxima \n");
         printf("2. Promedio \n");
+        printf("3. Ordenar por codigo de estudiante \n");
         printf("0. Salir \n");
         printf("elige opcion: ");
         scanf("%d", &opcion); // lee la opcion
@@ -47,10 +76,17 @@ int main() {
             float promedio = sumaNotas(0)/(float)n;
             printf("el promedio es: %.2f\n", promedio);
         }
+        else if (opcion == 3) {
+            selectionSort();
+            printf("Estudiantes ordenados por codigo:\n");
+            for (int i = 0; i < n; i++) {
+                printf("Codigo: %d, Nota: %.1f\n", estud[i].codigo, estud[i].nota);
+            }
+        }
         else if (opcion != 0) {
             printf("Opcion no valida. Intente de nuevo.\n");
         }
-    } while (opcion != 2); 
+    } while (opcion != 0); 
     return 0; // fin 
 }                                     
 
