@@ -8,7 +8,7 @@ typedef struct {
 Estudiante estud[]= {
     {1235138975, 4.5},
     {2545555, 2.5},
-    {12556132, 3.4},
+    {12556132, 3.4},//la nota me marca error 
     {215465344, 1.5},
     {1446511654, 5.0}
 };
@@ -37,7 +37,7 @@ void selectionSort() {
             }
         }
         // Intercambia el elemento minimo con el primer
-        Estudiante temp=estud[i];
+        Estudiante temp=estud[i];// temp es una variable temporal
         estud[i]=estud[minIndex];
         estud[minIndex]=temp;
     }
@@ -72,9 +72,12 @@ int main() {
         else if (opcion == 3) {
             selectionSort();
             printf("Estudiantes ordenados por codigo:\n");
+            for (int i = 0; i < n; i++) {
+                printf("Codigo: %d, Nota: %.1f\n", estud[i].codigo, estud[i].nota);
+            }// muestra la lista ordenada
         }
         else if (opcion == 4) {
-            mostrar();
+            mostrar();// muestra la lista
         }
         else if (opcion == 5) {
             printf("adios :)  saliendo del programa.\n");
