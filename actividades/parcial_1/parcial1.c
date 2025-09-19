@@ -36,24 +36,16 @@ void selectionSort() {
                 minIndex = j;
             }
         }
-        // Intercambia el elemento minimo con el primer elemento
+        // Intercambia el elemento minimo con el primer
         Estudiante temp=estud[i];
         estud[i]=estud[minIndex];
         estud[minIndex]=temp;
     }
 }
-void selectionSort() {
-    for (int i = 0; i < n - 1; i++) {
-        int minIndex = i;
-        for (int j = i + 1; j < n; j++) {
-            if (estud[j].codigo < estud[minIndex].codigo) {
-                minIndex = j;
-            }
-        }
-        // Intercambia el elemento minimo con el primer elemento
-        Estudiante temp=estud[i];
-        estud[i]=estud[minIndex];
-        estud[minIndex]=temp;
+//mostrar lista
+void mostrar() {
+    for (int i = 0; i< n; i++) {
+        printf("Codigo: %d, Nota: %.1f\n", estud[i].codigo, estud[i].nota);
     }
 }
 
@@ -65,7 +57,8 @@ int main() {
         printf("1. Nota Maxima \n");
         printf("2. Promedio \n");
         printf("3. Ordenar por codigo de estudiante \n");
-        printf("0. Salir \n");
+        printf("4. Mostrar lista de estudiantes \n");
+        printf("5. Salir \n");
         printf("elige opcion: ");
         scanf("%d", &opcion); // lee la opcion
 
@@ -73,20 +66,23 @@ int main() {
             printf("la nota maxima es: %.1f\n", notaMax(0));
         }
         else if (opcion == 2) {
-            float promedio = sumaNotas(0)/(float)n;
+            float promedio = sumaNotas(0)/n;
             printf("el promedio es: %.2f\n", promedio);
         }
         else if (opcion == 3) {
             selectionSort();
             printf("Estudiantes ordenados por codigo:\n");
-            for (int i = 0; i < n; i++) {
-                printf("Codigo: %d, Nota: %.1f\n", estud[i].codigo, estud[i].nota);
-            }
         }
-        else if (opcion != 0) {
+        else if (opcion == 4) {
+            mostrar();
+        }
+        else if (opcion == 5) {
+            printf("adios :)  saliendo del programa.\n");
+        }
+        else {
             printf("Opcion no valida. Intente de nuevo.\n");
         }
-    } while (opcion != 0); 
+    } while (opcion != 5); //  para q no se repita el menu
     return 0; // fin 
 }                                     
 
