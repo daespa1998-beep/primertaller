@@ -28,7 +28,8 @@ float sumaNotas(int i){
     // esta funcion calcula la suma de las notas
 }
 //select sort por codigo de estudiante
-void selectionSort() {
+void selectionSort(Estudiante estud[], int n)// funcion para ordenar
+{
     for (int i = 0; i < n - 1; i++) {
         int minIndex = i;
         for (int j = i + 1; j < n; j++) {
@@ -43,9 +44,10 @@ void selectionSort() {
     }
 }
 //mostrar lista
-void mostrar() {
+void mostrar(estudiantes estud[], int n) {
+    printf("mostrar %d estudiantes:\n", n);
     for (int i = 0; i< n; i++) {
-        printf("Codigo: %d, Nota: %.1f\n", estud[i].codigo, estud[i].nota);
+        printf("Codigo: %d,  Nota: %.1f\n", estud[i].codigo, estud[i].nota); 
     }
 }
 
